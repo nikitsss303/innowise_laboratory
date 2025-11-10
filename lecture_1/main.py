@@ -6,6 +6,9 @@ init()
 
 #Print colored Hello World
 print(f"{Fore.RED}{Back.YELLOW}Hello World!{Style.RESET_ALL}")
+
+breakpoint()
+
 print(f"{Fore.GREEN}Hello World in Green!{Style.RESET_ALL}")
 print(f"{Fore.BLUE}Hello World in Bright Blue!{Style.RESET_ALL}")
 print(f"{Fore.MAGENTA}{Back.CYAN}Hello World with Magenta text and Cyan background!{Style.RESET_ALL}")
