@@ -12,11 +12,8 @@ class CreateBook(BaseBook):
     pass
 
 
-class UpdateBook(BaseModel):
-    title: Optional[str] = None
-    author: Optional[str] = None
-    year: Optional[str] = None
-
+class UpdateBook(BaseBook):
+    pass
 
 class ReadBook(BaseBook):
     id: int
