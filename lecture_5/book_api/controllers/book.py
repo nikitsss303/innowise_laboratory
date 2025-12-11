@@ -23,7 +23,7 @@ class BookController:
     ):
         books = await book_db.get_all_books(db= db)
         if not books:
-            return False, books, status.HTTP_404_NOT_FOUND
+            return False, {"message": "Books not found"}, status.HTTP_404_NOT_FOUND
         return True, books, status.HTTP_200_OK
 
     async def get_book_by_title(
@@ -33,7 +33,7 @@ class BookController:
     ):
         books = await book_db.get_book_by_title(db= db, book_title= book_title)
         if not books:
-            return False, books, status.HTTP_404_NOT_FOUND
+            return False, {"message": "Books not found"}, status.HTTP_404_NOT_FOUND
         return True, books, status.HTTP_200_OK
 
     async def get_book_by_author(
@@ -43,7 +43,7 @@ class BookController:
     ):
         books = await book_db.get_book_by_author(db= db, book_author= book_author)
         if not books:
-            return False, books, status.HTTP_404_NOT_FOUND
+            return False, {"message": "Books not found"}, status.HTTP_404_NOT_FOUND
         return True, books, status.HTTP_200_OK
 
     async def get_book_by_year(
@@ -53,7 +53,7 @@ class BookController:
     ):
         books = await book_db.get_book_by_year(db= db, book_year= book_year)
         if not books:
-            return False, books, status.HTTP_404_NOT_FOUND
+            return False, {"message": "Books not found"}, status.HTTP_404_NOT_FOUND
         return True, books, status.HTTP_200_OK
 
     async def create_new_book(
