@@ -87,8 +87,17 @@ class BookController:
     ):
         check_book = await book_db.get_book_by_id(db= db, book_id= book_id)
         if not check_book:
-            return False, {"message": "Book not found"}, status.HTTP_404_NOT_FOUND
+            return False, {
+                "message": "Book not found",
+                "status_code": status.HTTP_404_NOT_FOUND
+            },status.HTTP_404_NOT_FOUND
         is_book_deleted = await book_db.delete_book(db= db, book_id= book_id)
         if not is_book_deleted:
-            return False, {"message": "Couldn`t to delete book"}, status.HTTP_500_INTERNAL_SERVER_ERROR
-        return True, {"message": "Successfully deleted book"}, status.HTTP_200_OK
+            return False, {
+                "message": "Couldn`t to delete book", 
+                "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR
+            }, status.HTTP_500_INTERNAL_SERVER_ERROR
+        return True, {
+            "message": "Successfully deleted book",
+            "status_code": status.HTTP_200_OK
+        }, status.HTTP_200_OK
