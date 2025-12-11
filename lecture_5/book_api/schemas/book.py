@@ -3,6 +3,7 @@ from pydantic import BaseModel
 
 
 class BaseBook(BaseModel):
+    id: int
     title: str
     author: str
     year: Optional[str] = None
