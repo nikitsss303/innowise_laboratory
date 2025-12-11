@@ -27,6 +27,12 @@ def get_book_by_year(
         ):
     return db.query(book_model.Book).filter(book_model.Book.year == book_year).all()
 
+def get_book_by_id(
+        db: AsyncSession,
+        book_id: int
+        ):
+    return db.query(book_model.Book).filter(book_model.Book.id == book_id).all()
+
 def create_new_book(
         db: AsyncSession,
         book: book_schemas.CreateBook 
