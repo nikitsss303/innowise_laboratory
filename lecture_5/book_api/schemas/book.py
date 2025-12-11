@@ -5,7 +5,7 @@ from pydantic import BaseModel
 class BaseBook(BaseModel):
     title: str
     author: str
-    year: Optional[str] = None
+    year: Optional[int] = None
 
 
 class CreateBook(BaseBook):
